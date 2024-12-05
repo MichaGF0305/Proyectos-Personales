@@ -1,0 +1,271 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{listings}
+\usepackage{xcolor}
+
+% Configuración para el paquete listings
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    stepnumber=1,
+    numbersep=5pt,
+    backgroundcolor=\color{lightgray},
+    frame=single,
+    captionpos=b,
+    breaklines=true  % Permite el ajuste automático de líneas largas
+}
+
+\title{Documentación de Ejercicios de Python}
+\author{Michael Garcia}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+\newpage
+
+\section{Ejercicio 1: Registro de Usuario}
+
+\subsection{Enunciado}
+Alicia está desarrollando una aplicación para registrar usuarios. Ella necesita capturar la siguiente información de cada usuario: nombre, apellido, edad y altura. Esta información debe ser almacenada en variables y luego mostrada en un formato amigable.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio, el proceso es el siguiente:
+\begin{itemize}
+    \item Solicitar al usuario que ingrese su nombre, apellido, edad y altura.
+    \item Almacenar esta información en variables.
+    \item Mostrar la información del usuario en una oración formateada.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Solicitar información al usuario
+nombre = input("Ingrese su nombre: ")
+apellido = input("Ingrese su apellido: ")
+edad = input("Ingrese su edad: ")
+altura = input("Ingrese su altura en metros: ")
+
+# Mostrar la información del usuario
+print(f"El usuario {nombre} {apellido} tiene {edad} años y una altura de {altura} metros.")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Ingrese su nombre: Alicia
+Ingrese su apellido: Pérez
+Ingrese su edad: 25
+Ingrese su altura en metros: 1.65
+El usuario Alicia Pérez tiene 25 años y una altura de 1.65 metros.
+\end{verbatim}
+
+\newpage
+\section{Ejercicio 2: Operaciones Matemáticas en un Proyecto}
+
+\subsection{Enunciado}
+El sistema de Alicia necesita realizar algunas operaciones matemáticas básicas para calcular el IMC (Índice de Masa Corporal) de los usuarios. El IMC se calcula como el peso en kilogramos dividido por la altura en metros al cuadrado.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio:
+\begin{itemize}
+    \item Solicitar al usuario que ingrese su peso en kilogramos y su altura en metros.
+    \item Calcular el IMC utilizando la fórmula: IMC = peso / (altura ** 2).
+    \item Mostrar el IMC del usuario.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Solicitar peso y altura al usuario
+peso = float(input("Ingrese su peso en kilogramos: "))
+altura = float(input("Ingrese su altura en metros: "))
+
+# Calcular el IMC
+imc = peso / (altura ** 2)
+
+# Mostrar el IMC
+print(f"Tu IMC es {imc:.2f}.")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Ingrese su peso en kilogramos: 70
+Ingrese su altura en metros: 1.75
+Tu IMC es 22.86.
+\end{verbatim}
+
+\newpage
+\section{Ejercicio 3: Evaluación de Edad}
+
+\subsection{Enunciado}
+Alicia necesita un sistema que determine si una persona es un adulto o un menor. Un adulto es alguien que tiene 18 años o más.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio:
+\begin{itemize}
+    \item Solicitar al usuario que ingrese su edad.
+    \item Utilizar una estructura condicional para determinar si la persona es un adulto o un menor.
+    \item Mostrar el mensaje correspondiente.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Solicitar edad al usuario
+edad = int(input("Ingrese su edad: "))
+
+# Evaluar si es adulto o menor
+if edad >= 18:
+    print("Eres adulto.")
+else:
+    print("Eres menor.")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Ingrese su edad: 20
+Eres adulto.
+\end{verbatim}
+
+\newpage
+\section{Ejercicio 4: Listas de Compras}
+
+\subsection{Enunciado}
+Alicia está creando una aplicación para gestionar listas de compras. Ella necesita permitir a los usuarios agregar ítems a una lista y luego mostrar todos los ítems de la lista.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio:
+\begin{itemize}
+    \item Permitir al usuario agregar ítems a una lista hasta que decida detenerse.
+    \item Mostrar todos los ítems que han sido agregados.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Inicializar la lista de compras
+lista_compras = []
+
+# Solicitar ítems al usuario
+while True:
+    item = input("Ingrese un ítem para la lista de compras (o 'salir' para terminar): ")
+    if item.lower() == 'salir':
+        break
+    lista_compras.append(item)
+
+# Mostrar todos los ítems
+print("Lista de compras:")
+for i in lista_compras:
+    print(f"- {i}")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Ingrese un ítem para la lista de compras (o 'salir' para terminar): leche
+Ingrese un ítem para la lista de compras (o 'salir' para terminar): pan
+Ingrese un ítem para la lista de compras (o 'salir' para terminar): frutas
+Ingrese un ítem para la lista de compras (o 'salir' para terminar): salir
+Lista de compras:
+- leche
+- pan
+- frutas
+\end{verbatim}
+
+\newpage
+\section{Ejercicio 5: Cálculo de Promedio de Notas}
+
+\subsection{Enunciado}
+En el sistema de gestión de estudiantes, Alicia necesita calcular el promedio de las notas de un estudiante. El usuario debe ingresar una lista de notas y el programa debe calcular el promedio de estas notas.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio:
+\begin{itemize}
+    \item Permitir al usuario ingresar una serie de notas.
+    \item Calcular el promedio de las notas.
+    \item Mostrar el promedio con un mensaje.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Inicializar lista de notas
+notas = []
+
+# Solicitar notas al usuario
+while True:
+    nota = input("Ingrese una nota (o 'fin' para terminar): ")
+    if nota.lower() == 'fin':
+        break
+    notas.append(float(nota))
+
+# Calcular el promedio
+promedio = sum(notas) / len(notas) if notas else 0
+
+# Mostrar el promedio
+print(f"El promedio de tus notas es {promedio:.2f}.")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Ingrese una nota (o 'fin' para terminar): 8.5
+Ingrese una nota (o 'fin' para terminar): 9.0
+Ingrese una nota (o 'fin' para terminar): 7.5
+Ingrese una nota (o 'fin' para terminar): fin
+El promedio de tus notas es 8.33.
+\end{verbatim}
+
+\newpage
+\section{Ejercicio 6: Conversión de Unidades}
+
+\subsection{Enunciado}
+Alicia necesita desarrollar un sistema que permita convertir entre diferentes unidades de medida. Por ejemplo, convertir de metros a kilómetros, o de grados Celsius a grados Fahrenheit.
+
+\subsection{Proceso de Resolución}
+Para resolver este ejercicio:
+\begin{itemize}
+    \item Solicitar al usuario que elija el tipo de conversión que desea realizar (por ejemplo, metros a kilómetros o grados Celsius a Fahrenheit).
+    \item Solicitar el valor a convertir.
+    \item Realizar la conversión utilizando la fórmula adecuada.
+    \item Mostrar el resultado de la conversión.
+\end{itemize}
+
+\subsection{Código}
+\begin{lstlisting}
+# Funciones de conversión
+def metros_a_kilometros(metros):
+    return metros / 1000
+
+def celsius_a_fahrenheit(celsius):
+    return (celsius * 9/5) + 32
+
+# Solicitar tipo de conversión
+opcion = input("Elija el tipo de conversión (1: metros a kilómetros, 2: Celsius a Fahrenheit): ")
+
+if opcion == '1':
+    metros = float(input("Ingrese la distancia en metros: "))
+    kilometros = metros_a_kilometros(metros)
+    print(f"{metros} metros son {kilometros:.2f} kilómetros.")
+elif opcion == '2':
+    celsius = float(input("Ingrese la temperatura en grados Celsius: "))
+    fahrenheit = celsius_a_fahrenheit(celsius)
+    print(f"{celsius} grados Celsius son {fahrenheit:.2f} grados Fahrenheit.")
+else:
+    print("Opción no válida.")
+\end{lstlisting}
+
+\subsection{Resultados}
+\begin{verbatim}
+Elija el tipo de conversión (1: metros a kilómetros, 2: Celsius a Fahrenheit): 1
+Ingrese la distancia en metros: 5000
+5000 metros son 5.00 kilómetros.
+\end{verbatim}
+
+\begin{verbatim}
+Elija el tipo de conversión (1: metros a kilómetros, 2: Celsius a Fahrenheit): 2
+Ingrese la temperatura en grados Celsius: 25
+25 grados Celsius son 77.00 grados Fahrenheit.
+\end{verbatim}
+
+\end{document}
